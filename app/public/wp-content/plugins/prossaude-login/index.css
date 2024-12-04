@@ -1,0 +1,27 @@
+body {
+  opacity: 0;
+}
+body.login {
+  background-color: #fffe;
+}
+label {
+  font-weight: 700;
+}
+.button-primary {
+  transition: "transform 0.5s ease-in-out";
+}
+.button-primary:active {
+  transform: translateY(0.1rem);
+}
+.button-primary:hover:active {
+  transform: translateY(0.1rem);
+}
+.button-primary:hover {
+  transform: translateY(-0.05rem);
+}
+.login h1 a {
+  background-size: contain;
+}
+#loginform {
+  border-radius: 0.25rem;
+}

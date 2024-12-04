@@ -1,0 +1,22 @@
+.formHeader {
+  margin-bottom: 0.5rem;
+}
+.fsSw {
+  margin-right: 0.5rem;
+  @media (max-width: 600px) {
+    margin-bottom: 0.5rem;
+  }
+}
+.label {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+}
+.check {
+  margin-left: 0.5rem;
+}
+.checkLabel {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-right: 0.5rem;
+}

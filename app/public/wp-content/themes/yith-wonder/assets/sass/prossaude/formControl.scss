@@ -1,0 +1,135 @@
+/* Based on Bootstrap UI */
+@use "./abstracts/vars.scss" as *;
+@use "./pseudos/filling.scss" as *;
+@mixin uploadButton {
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.375rem 0.75rem;
+  margin: -0.375rem -0.75rem;
+  -webkit-margin-end: 0.75rem;
+  margin-inline-end: 0.75rem;
+  color: var(--bs-body-color);
+  background-color: var(--upload-button);
+  pointer-events: none;
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+  border-inline-end-width: var(--bs-border-width);
+  border-radius: 0;
+  &:not(:disabled) {
+    &:not([readonly]) {
+      cursor: pointer;
+    }
+  }
+  ::after,
+  ::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+  }
+  transition:
+    color 0.15s ease-in-out,
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+::-webkit-file-upload-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+::file-selector-button {
+  font: inherit;
+  appearance: button;
+  -webkit-appearance: button;
+}
+.form-control {
+  box-shadow: var(--bslikesd);
+  display: block;
+  margin-inline: 0.0625rem;
+  margin-block: 0.5rem;
+  line-height: 1.5rem;
+  outline: none;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--bs-body-color);
+  appearance: none;
+  background-color: var(--bs-body-bg);
+  background-clip: padding-box;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  transition:
+    border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  &[type="file"] {
+    color: rgba(84, 84, 84, 0.7);
+    overflow: hidden;
+    &::-webkit-file-upload-button {
+      @include uploadButton;
+      -webkit-transition:
+        color 0.15s ease-in-out,
+        background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+    }
+    &::file-selector-button {
+      @include uploadButton;
+    }
+    &:not(:disabled) {
+      &:not([readonly]) {
+        &::-webkit-file-upload-button {
+          background-color: var(--upload-button);
+        }
+        &::file-selector-button {
+          background-color: var(--upload-button);
+        }
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      &::-webkit-file-upload-button {
+        -webkit-transition: none;
+        transition: none;
+      }
+      &::file-selector-button {
+        transition: none;
+      }
+    }
+  }
+}
+.form-control-sm {
+  min-height: calc(1.5em + 0.5rem + calc(var(--bs-border-width) * 2));
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: var(--bs-border-radius-sm);
+  &::-webkit-file-upload-button {
+    padding: 0.25rem 0.5rem;
+    margin: -0.25rem -0.5rem;
+    -webkit-margin-end: 0.5rem;
+    margin-inline-end: 0.5rem;
+  }
+  &:file-selector-button {
+    padding: 0.25rem 0.5rem;
+    margin: -0.25rem -0.5rem;
+    -webkit-margin-end: 0.5rem;
+    margin-inline-end: 0.5rem;
+  }
+}
+.form-control-lg {
+  min-height: calc(1.5em + 1rem + calc(var(--bs-border-width) * 2));
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  border-radius: var(--bs-border-radius-lg);
+  &::-webkit-file-upload-button {
+    padding: 0.5rem 1rem;
+    margin: -0.5rem -1rem;
+    -webkit-margin-end: 1rem;
+    margin-inline-end: 1rem;
+  }
+  &::file-selector-button {
+    padding: 0.5rem 1rem;
+    margin: -0.5rem -1rem;
+    -webkit-margin-end: 1rem;
+    margin-inline-end: 1rem;
+  }
+}
