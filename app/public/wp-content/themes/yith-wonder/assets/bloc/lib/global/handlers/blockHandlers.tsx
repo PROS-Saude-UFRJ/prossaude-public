@@ -1,3 +1,4 @@
+import { rc } from "../../../vars";
 import { generateUUID } from "./gHandlers";
 import ReactDOM from "react-dom";
 
@@ -17,7 +18,7 @@ export function fillIds(ref: HTMLElement): string {
   return proposedId;
 }
 export function gatherFormData(
-  ref: HTMLInputElement | HTMLTextAreaElement,
+  ref: HTMLSelectElement | HTMLInputElement | HTMLTextAreaElement,
   label: HTMLLabelElement | null,
 ): void {
   const form = ref.closest("form");
@@ -51,5 +52,27 @@ export function renderWatcher(
       }`,
     );
     return false;
+  }
+}
+export function pushSelectOpts(
+  el: HTMLSelectElement | null,
+  idf: string,
+  opts: HTMLOptionElement[],
+): void {
+  try {
+    if (
+      !(
+        el instanceof HTMLSelectElement &&
+        (el.type === "select-multiple" || el.dataset.type === "select-multiple")
+      )
+    )
+      throw new Error(`Invalid type for select`);
+    if (typeof idf !== "string") throw new Error(`Invalid type passed as identificator.`);
+    if (idf === "" || !document.getElementById(idf))
+      throw new Error(`Invalid id string passed as identificator.`);
+    if (!rc[idf]) rc[idf] = {};
+    rc[idf].lastOpts = opts.map(op => op.value);
+  } catch (e) {
+    console.error(`Error executing pushSelectOpts:\n${(e as Error).message}`);
   }
 }

@@ -28,6 +28,7 @@ export default class FormEmail extends Component {
         <label
           ref={this.l}
           id={`lab__${this.id}`}
+          data-block={`block__${this.id}`}
           className="form-label"
           htmlFor={this.id}
           contentEditable
@@ -36,6 +37,7 @@ export default class FormEmail extends Component {
         </label>
         <input
           ref={this.r}
+          data-block={`block__${this.id}`}
           className="form-control inpEmail"
           type="email"
           name={`email__${this.id}`}

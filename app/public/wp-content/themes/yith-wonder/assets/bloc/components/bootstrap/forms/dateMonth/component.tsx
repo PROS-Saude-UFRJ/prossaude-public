@@ -25,6 +25,7 @@ export default class FormMonth extends Component {
       <>
         <label
           ref={this.l}
+          data-block={`block__${this.id}`}
           id={`lab__${this.id}`}
           className="form-label"
           htmlFor={this.id}
@@ -34,6 +35,7 @@ export default class FormMonth extends Component {
         </label>
         <input
           ref={this.r}
+          data-block={`block__${this.id}`}
           className="form-control any-day-month"
           type="month"
           name={`month__${this.id}`}

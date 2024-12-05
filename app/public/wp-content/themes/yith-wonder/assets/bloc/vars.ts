@@ -174,3 +174,4 @@ export const panelFormsVariables = {
   isAutocorrectProfOn: false,
   isAutofillProfOn: false,
 };
+export const rc: { [k: string]: { [k: string]: string[] } } = {};

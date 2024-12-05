@@ -2,10 +2,10 @@
 import { registerBlockType } from "@wordpress/blocks";
 //@ts-ignore
 import { useBlockProps } from "@wordpress/block-editor";
-import FormCheck from "./component";
-registerBlockType("bootstrap/check", {
-  title: "Campo de Confirmação",
-  icon: "yes",
+import FormSelectMultiple from "./component";
+registerBlockType("bootstrap/selectmultiple", {
+  title: "Campo de Seleção Múltipla",
+  icon: "editor-justify",
   category: "bootstrap_ui",
   attributes: {
     preview: {
@@ -17,7 +17,7 @@ registerBlockType("bootstrap/check", {
     attributes: {
       preview: true,
     },
-    description: "Preview do Campo de Confirmação",
+    description: "Preview do Campo de Seleção Múltipla",
     innerBlocks: [],
   },
   edit: ({ attributes }: { attributes: { [k: string]: any } }) => {
@@ -43,7 +43,7 @@ registerBlockType("bootstrap/check", {
       </div>
     ) : (
       <fieldset {...useBlockProps()} style={{ border: "none" }} className="form-control-wrapper">
-        <FormCheck />
+        <FormSelectMultiple />
       </fieldset>
     );
   },

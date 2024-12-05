@@ -28,12 +28,14 @@ export default class FormControl extends Component {
           id={`lab__${this.id}`}
           className="form-label"
           htmlFor={this.id}
+          data-block={`block__${this.id}`}
           contentEditable
         >
           Campo de Texto Simples:
         </label>
         <input
           ref={this.r}
+          data-block={`block__${this.id}`}
           className="form-control"
           type="text"
           maxLength={536870911}

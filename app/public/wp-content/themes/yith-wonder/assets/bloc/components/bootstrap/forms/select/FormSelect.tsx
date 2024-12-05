@@ -12,10 +12,10 @@ registerBlockType("bootstrap/select", {
       type: "boolean",
       default: false,
     },
-    options {
+    options: {
       type: "array",
       default: [],
-    }
+    },
   },
   example: {
     attributes: {

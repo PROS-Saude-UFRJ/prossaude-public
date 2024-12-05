@@ -28,12 +28,14 @@ export default class FormDate extends Component {
           id={`lab__${this.id}`}
           className="form-label"
           htmlFor={this.id}
+          data-block={`block__${this.id}`}
           contentEditable
         >
           Campo de Data Simples:
         </label>
         <input
           ref={this.r}
+          data-block={`block__${this.id}`}
           className="form-control any-day"
           type="date"
           name={`date__${this.id}`}
