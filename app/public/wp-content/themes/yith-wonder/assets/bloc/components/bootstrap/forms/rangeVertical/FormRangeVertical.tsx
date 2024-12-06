@@ -47,7 +47,11 @@ registerBlockType("bootstrap/rangevertical", {
         ></video>
       </div>
     ) : (
-      <fieldset {...useBlockProps()} style={{ border: "none" }} className="form-control-wrapper">
+      <fieldset
+        {...useBlockProps()}
+        style={{ border: "none", display: "inline-flex", placeItems: "flex-end" }}
+        className="form-control-wrapper"
+      >
         <FormRangeVertical />
       </fieldset>
     );

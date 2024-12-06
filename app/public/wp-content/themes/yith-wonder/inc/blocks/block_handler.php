@@ -86,6 +86,10 @@ class BlockHandler {
 	static public function registerBootstrapBlock(string $name, array $options): void {
 		try {
 			$f = '/build/'.($options['script_path'] ?? '');
+			if (empty($options['script_handle']) || empty($options['script_path'])) {
+				error_log('Missing script definitions when registering '.$name.': Handle '.($options['script_handle'] ?? 'NULL').' Path '.($options['script_path'] ?? 'NULL'));
+				return;
+			}
 			$f_name = $options['script_handle'];
 			$s = '/assets/css/dist/'.($options['style_path'] ?? '');
 			$s_name = $options['style_handle'];

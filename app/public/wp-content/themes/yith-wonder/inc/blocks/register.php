@@ -336,17 +336,49 @@ add_action('init', fn() =>
 		'client_script_prefix' => 'form-text-area'
 	]), 29
 );
-
-
+add_action('init', fn() =>
+	BlockHandler::registerBootstrapBlock('bootstrap/select', [
+		'title' => 'Campo de Seleção',
+		'icon' => 'list-view',
+		'description' => 'Campo dropdown para seleção de valor único.',
+		'script_path' => 'FormSelect.js',
+		'script_handle' => 'form_select_script',
+		'style_path' => 'formSelect.css',
+		'style_handle' => 'form_select_style',
+		'keywords' => [
+			'input', 'entrada', 'campo', 'form', 'formulário',
+			'seletor', 'select', 'dropdown', 'seleção' 
+		],
+		'client_script_path' => 'forms/select/index.js',
+		'client_script_prefix' => 'form-select',
+	]), 30
+);
+add_action('init', fn() =>
+	BlockHandler::registerBootstrapBlock('bootstrap/selectmultiple', [
+		'title' => 'Campo de Seleção Múltipla',
+		'icon' => 'editor-justify',
+		'description' => 'Campo dropdown para seleção de valores múltiplos.',
+		'script_path' => 'FormSelectMultiple.js',
+		'script_handle' => 'form_select_multiple_script',
+		'style_path' => 'formSelect.css',
+		'style_handle' => 'form_select_style',
+		'keywords' => [
+			'input', 'entrada', 'campo', 'form', 'formulário',
+			'seletor', 'select', 'dropdown', 'seleção', 'múltiplo'
+		],
+		'client_script_path' => 'forms/selectMultiple/index.js',
+		'client_script_prefix' => 'form-select-multiple'
+	]), 31
+);
 add_action('init', fn() => 
 	BlockHandler::registerBootstrapBlock('bootstrap/range', [
 		'title' => 'Campo de Variação',
 		'icon' => 'image-flip-horizontal',
 		'description' => 'Campo de Variação Horizontal.',
-		'script_handle' > 'form_range_script',
+		'script_handle' => 'form_range_script',
 		'script_path' => 'FormRange.js',
-		'style_handle' => 'form_control_style',
-		'style_path' => 'formControl.css',
+		'style_handle' => 'form_range_style',
+		'style_path' => 'formRange.css',
 		'keywords' => ['input', 'entrada', 'campo', 'form', 'formulário', 'range', 'variação'],
 		'client_script_path' => 'forms/range/index.js',
 		'client_script_prefix' => 'form-range'
@@ -357,10 +389,10 @@ add_action('init', fn() =>
 		'title' => 'Campo de Variação Vertical',
 		'icon' => 'image-flip-vertical',
 		'description' => 'Campo de Variação Vertical.',
-		'script_handle' > 'form_range_vertical_script',
+		'script_handle' => 'form_range_vertical_script',
 		'script_path' => 'FormRangeVertical.js',
-		'style_handle' => 'form_control_style',
-		'style_path' => 'formControl.css',
+		'style_handle' => 'form_range_style',
+		'style_path' => 'formRange.css',
 		'keywords' => ['input', 'entrada', 'campo', 'form', 'formulário', 'range', 'variação'],
 		'client_script_path' => 'forms/rangeVertical/index.js',
 		'client_script_prefix' => 'form-range-vertical'
@@ -370,13 +402,27 @@ add_action('init', fn() =>
 	BlockHandler::registerBootstrapBlock('bootstrap/switch', [
 		'title' => 'Alternador',
 		'icon' => 'dashboard',
-		'description' => 'Campo de controle para alternar variáveis',
+		'description' => 'Campo de controle para alternar variáveis.',
 		'script_handle' => 'form_switch',
 		'script_path' => 'FormSwitch.js',
-		'style_handle' => 'form_control_style',
-		'style_path' => 'formControl.css',
-		'keywords' => ['form', 'formulário', 'alternador', 'switch', 'check'],
+		'style_handle' => 'form_check_style',
+		'style_path' => 'formCheck.css',
+		'keywords' => ['form', 'formulário', 'alternador', 'switch', 'check', 'alternador', 'toggle'],
 		'client_script_path' => 'forms/switch/index.js',
 		'client_script_prefix' => 'form-switch'
 	]), 34
+);
+add_action('init', fn() =>
+	BlockHandler::registerBootstrapBlock('bootstrap/check', [
+		'title' => 'Campo de Confirmação',
+		'icon' => 'yes',
+		'description' => 'Campo para alteranação de Confirmação.',
+		'script_handle' => 'form_check',
+		'script_path' => 'FormCheck.js',
+		'style_handle' => 'form_check_style',
+		'style_path' => 'formCheck.css',
+		'keywords' => ['form', 'formulário', 'confirmação', 'check'],
+		'client_script_path' => 'forms/check/index.js',
+		'client_script_prefix' => 'form-check'
+	]), 35
 );
