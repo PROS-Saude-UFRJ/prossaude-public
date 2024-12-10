@@ -31,16 +31,13 @@ export default class FormRangeVertical extends Component {
           htmlFor={this.id}
           contentEditable
           style={{
-            flexBasis: "45%",
+            minWidth: "10rem",
             alignSelf: "flex-start",
             marginBottom: "5%",
           }}
         >
           Campo de Variação Vertical:
         </label>
-        <div className="form-text" style={{ fontSize: "0.6rem", transform: "translateX(-45%)" }}>
-          Insira aqui uma dica ou remova o texto.
-        </div>
         <input
           ref={this.r}
           data-block={`block__${this.id}`}
@@ -51,9 +48,12 @@ export default class FormRangeVertical extends Component {
           id={this.id}
           name={`range__${this.id}`}
           style={{
-            transform: "rotate(-90deg) translate(0, -500%) scale(0.5)",
+            transform: "rotate(-90deg) translate(15%, -100%) scale(0.35)",
           }}
         />
+        <div className="form-text" style={{ fontSize: "0.6rem", alignSelf: "flex-start" }}>
+          Insira aqui uma dica ou remova o texto.
+        </div>
       </>
     );
   }
