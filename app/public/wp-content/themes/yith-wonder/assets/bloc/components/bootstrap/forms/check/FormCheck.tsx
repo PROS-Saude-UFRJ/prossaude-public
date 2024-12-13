@@ -3,9 +3,9 @@ import { registerBlockType } from "@wordpress/blocks";
 //@ts-ignore
 import { useBlockProps } from "@wordpress/block-editor";
 import FormCheck from "./component";
-registerBlockType("bootstrap/check", {
+registerBlockType("bootstrap/checkbox", {
   title: "Campo de Confirmação",
-  icon: "yes",
+  icon: "saved",
   category: "bootstrap_ui",
   attributes: {
     preview: {
