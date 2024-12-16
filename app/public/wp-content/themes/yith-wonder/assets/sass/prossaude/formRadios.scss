@@ -1,0 +1,37 @@
+@use "./abstracts/vars.scss" as *;
+@use "./abstracts/mixins.scss" as *;
+.form-check {
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 0.5em;
+  margin-bottom: 0.125rem;
+}
+.form-check-input {
+  @include opaque-unchecked;
+  @include translate-hover-click;
+  --bs-form-check-bg: var(--bs-body-bg) float: left;
+  margin-left: 0.5em;
+  width: 1em;
+  height: 1em;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-origin: content-box;
+  background-attachment: local;
+  background-size: contain;
+  -webkit-print-color-adjust: exact;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+}
+.radioGroup__fs {
+  border: none;
+}
+.radioInspect__TextEntry {
+  &:has([id*="textControl"]) {
+    margin-bottom: 0 !important;
+  }
+}
+.radioInspect_btn {
+  &.radioInspect_btn__remove {
+    padding-top: 0;
+    padding-bottom: 1rem;
+  }
+}

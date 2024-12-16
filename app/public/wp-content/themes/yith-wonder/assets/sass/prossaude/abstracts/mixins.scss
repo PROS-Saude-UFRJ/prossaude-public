@@ -1,0 +1,14 @@
+@mixin translate-hover-click {
+  &:hover {
+    transform: translateY(-1px);
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+}
+@mixin opaque-unchecked {
+  opacity: 0.3;
+  &:checked {
+    opacity: 1;
+  }
+}

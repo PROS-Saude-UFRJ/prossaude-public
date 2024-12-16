@@ -1,4 +1,5 @@
 @use "./abstracts/vars.scss" as *;
+@use "./abstracts/mixins.scss" as *;
 .form-check {
   display: block;
   min-height: 1.5rem;
@@ -15,7 +16,6 @@
     margin-top: 0.25em;
     vertical-align: top;
     border-radius: 0.25em;
-    opacity: 0.3;
     accent-color: green;
     float: left;
     appearance: auto;
@@ -26,15 +26,8 @@
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
     &:not([role="switch"]) {
-      &:hover {
-        transform: translateY(-1px);
-      }
-      &:active {
-        transform: translateY(1px);
-      }
-      &:checked {
-        opacity: 1;
-      }
+      @include opaque-unchecked;
+      @include translate-hover-click;
     }
     &[role="switch"] {
       cursor: pointer;
